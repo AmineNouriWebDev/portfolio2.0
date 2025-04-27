@@ -2,9 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Personal Webpage</title>
-    <title>BRADENGELHARDT</title>
+    <title>Nouri Mohamed Amine</title>
     <meta name="description" content="Web designer and front-end developer" />
+    <link rel="icon" type="image/x-icon" href="./assets/img/logo.ico" />
     <link
       href="https://fonts.googleapis.com/css?family=Raleway:100,200,400,600"
       rel="stylesheet"
@@ -22,7 +22,7 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <!-- partial:index.partial.html -->
@@ -30,16 +30,20 @@
       <!-- navbar header -->
       <div class="nav-header">
         <div class="nav-brand">
-          <img src="assets/img/logo.png" />
+          <img src="./assets/img/logo.png" />
         </div>
         <i class="fa fa-bars fa-3x"></i>
         <div class="header-links">
           <ul>
-            <li data-menuanchor="about"><a href="#about">ABOUT</a></li>
-            <li data-menuanchor="portfolio">
-              <a href="#portfolio">PORTFOLIO</a>
+            <li data-menuanchor="about">
+              <a href="#about"><i class="fa fa-user"></i> ABOUT</a>
             </li>
-            <li data-menuanchor="contact"><a href="#contact">CONTACT</a></li>
+            <li data-menuanchor="portfolio">
+              <a href="#portfolio"><i class="fa fa-briefcase"></i> PORTFOLIO</a>
+            </li>
+            <li data-menuanchor="contact">
+              <a href="#contact"><i class="fa fa-envelope"></i> CONTACT</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -72,7 +76,7 @@
         <div class="section aboutme" data-anchor="aboutme">
           <div class="opaque-bg animated fadeInDown">
             <h1 style="color: white">
-              Nouri<span style="color: #ff6363">/</span>Med Amine
+              Nouri<span style="color: #ff637d">&lt;/&gt;</span>Med Amine
             </h1>
             <p>
               <span id="holder"></span><span class="blinking-cursor">|</span>
@@ -87,65 +91,68 @@
         <div class="section" data-anchor="skills">
           <div class="content">
             <h1 class="wow fadeInDown" data-wow-delay="0.2s">ABOUT ME</h1>
-            <p class="wow fadeInDown" data-wow-delay="0.2s">
-              I'm Med Amine Nouri, a passionate and creative web developer. My
-              goal is to transform your ideas into elegant and functional code.
-              I'm your perfect partner for web projects, from showcase websites
-              to complex applications.😀😎
+            <p
+              class="wow fadeInLeft"
+              style="text-align: justify; padding: 0 20px"
+              data-wow-delay="0.2s">
+              Hi, I'm Med Amine Nouri — a passionate and creative web developer
+              dedicated to bringing your ideas to life. I craft elegant,
+              high-performing websites that elevate your brand and engage your
+              audience. Let's build something extraordinary together! 🚀😎
             </p>
 
             <div class="wow fadeInUp container-skillbar" data-wow-delay="0.2s">
               <div class="skillbar clearfix" data-percent="90%">
-                <div class="skillbar-title" style="background: #dd1e2f">
+                <div class="skillbar-title">
                   <span>HTML5</span>
                 </div>
-                <div class="skillbar-bar" style="background: #dd1e2f"></div>
+                <div class="skillbar-bar"></div>
+                <div class="skill-bar-percent">90%</div>
+              </div>
+              <!-- End Skill Bar -->
+
+              <div class="skillbar clearfix" data-percent="90%">
+                <div class="skillbar-title">
+                  <span>CSS3</span>
+                </div>
+                <div class="skillbar-bar"></div>
                 <div class="skill-bar-percent">90%</div>
               </div>
               <!-- End Skill Bar -->
 
               <div class="skillbar clearfix" data-percent="80%">
-                <div class="skillbar-title" style="background: #ebb035">
-                  <span>CSS3</span>
+                <div class="skillbar-title">
+                  <span>Wordpress developer</span>
                 </div>
-                <div class="skillbar-bar" style="background: #ebb035"></div>
+                <div class="skillbar-bar"></div>
                 <div class="skill-bar-percent">80%</div>
               </div>
               <!-- End Skill Bar -->
 
               <div class="skillbar clearfix" data-percent="75%">
-                <div class="skillbar-title" style="background: #218559">
-                  <span>Photoshop</span>
+                <div class="skillbar-title">
+                  <span>React & NextJs </span>
                 </div>
-                <div class="skillbar-bar" style="background: #218559"></div>
+                <div class="skillbar-bar"></div>
                 <div class="skill-bar-percent">75%</div>
               </div>
               <!-- End Skill Bar -->
 
-              <div class="skillbar clearfix" data-percent="45%">
-                <div class="skillbar-title" style="background: #6840d4">
-                  <span>Rails</span>
+              <div class="skillbar clearfix" data-percent="90%">
+                <div class="skillbar-title">
+                  <span>Vibe Coding</span>
                 </div>
-                <div class="skillbar-bar" style="background: #6840d4"></div>
-                <div class="skill-bar-percent">45%</div>
+                <div class="skillbar-bar"></div>
+                <div class="skill-bar-percent">90%</div>
               </div>
               <!-- End Skill Bar -->
 
-              <div class="skillbar clearfix" data-percent="30%">
-                <div class="skillbar-title" style="background: #06a2cb">
-                  <span>jQuery</span>
+              <div class="skillbar clearfix" data-percent="80%">
+                <div class="skillbar-title">
+                  <span>Photoshop & other</span>
                 </div>
-                <div class="skillbar-bar" style="background: #06a2cb"></div>
-                <div class="skill-bar-percent">30%</div>
-              </div>
-              <!-- End Skill Bar -->
-
-              <div class="skillbar clearfix" data-percent="20%">
-                <div class="skillbar-title" style="background: #ab4dd2">
-                  <span>PHP</span>
-                </div>
-                <div class="skillbar-bar" style="background: #ab4dd2"></div>
-                <div class="skill-bar-percent">20%</div>
+                <div class="skillbar-bar"></div>
+                <div class="skill-bar-percent">80%</div>
               </div>
               <!-- End Skill Bar -->
             </div>
@@ -351,6 +358,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.4/jquery.fullPage.min.js"></script>
-    <script src="js/scripts.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>
