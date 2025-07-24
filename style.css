@@ -2,6 +2,12 @@
 
 body {
   font-family: "Raleway", sans-serif !important;
+  overflow-y: auto;
+}
+
+html {
+  scroll-behavior: auto;
+  /* Désactiver le smooth scroll natif */
 }
 
 ul {
@@ -64,9 +70,9 @@ p {
   position: fixed;
   background-color: #000;
   opacity: 1;
-  right: -285px; /* start off behind the scenes */
+  right: -285px;
+  /* start off behind the scenes */
   -webkit-font-smoothing: antialiased;
-  position: fixed;
   width: 285px;
 }
 
@@ -130,6 +136,7 @@ p {
 .header-links li.active a,
 .header-links li.active a i {
   color: #fff !important;
+  /* Forcer le texte en blanc pour l'état actif */
 }
 
 .header-links a {
@@ -137,8 +144,13 @@ p {
   -webkit-transition: all 0.2s ease-in;
 }
 
-.header-links a:hover,
-.header-links li.active a {
+.header-links a:hover {
+  color: #ff637d !important;
+  font-weight: bold;
+}
+
+/* Correction: Ne pas appliquer la couleur rose au texte actif */
+.header-links li:not(.active) a:hover {
   color: #ff637d !important;
   font-weight: bold;
 }
@@ -146,7 +158,7 @@ p {
 .header-links li.active a::after {
   opacity: 1;
   width: 100%;
-  background-color: #ff637d;
+  background-color: #fff;
 }
 
 /* slide out nav menu styles */
@@ -178,8 +190,7 @@ p {
   margin-right: auto;
 }
 
-.nav-links a:hover,
-.nav-links li.active a {
+.nav-links a:hover {
   color: #ff637d;
   font-weight: bold;
   -webkit-transition: all 0.6s ease-in-out;
@@ -197,6 +208,7 @@ p {
 .nav-links li.active a,
 .nav-links li.active a i {
   color: #fff !important;
+  /* Forcer le texte en blanc pour l'état actif */
 }
 
 .nav-links li.active a::after {
@@ -267,6 +279,7 @@ p {
 /* Scroll down indicator (bouncing) */
 
 @-webkit-keyframes bounce {
+
   0%,
   20%,
   50%,
@@ -275,10 +288,12 @@ p {
     -webkit-transform: translateY(0);
     transform: translateX(0);
   }
+
   40% {
     -webkit-transform: translateY(-30px);
     transform: translateY(-30px);
   }
+
   60% {
     -webkit-transform: translateY(-15px);
     transform: translateY(-15px);
@@ -286,6 +301,7 @@ p {
 }
 
 @-moz-keyframes bounce {
+
   0%,
   20%,
   50%,
@@ -293,15 +309,18 @@ p {
   100% {
     transform: translateY(0);
   }
+
   40% {
     transform: translateY(-30px);
   }
+
   60% {
     transform: translateY(-15px);
   }
 }
 
 @keyframes bounce {
+
   0%,
   20%,
   50%,
@@ -310,10 +329,12 @@ p {
     -ms-transform: translateY(0);
     transform: translateY(0);
   }
+
   40% {
     -ms-transform: translateY(-30px);
     transform: translateY(-30px);
   }
+
   60% {
     -ms-transform: translateY(-15px);
     transform: translateY(-15px);
@@ -348,19 +369,9 @@ p {
   width: 70%;
   margin-left: auto;
   margin-right: auto;
-}
-
-@media (max-width: 600px) {
-  .skillbar {
-    width: 80%;
-  }
-}
-
-.skillbar {
   position: relative;
   display: block;
   margin-bottom: 15px;
-  width: 100%;
   background: #efefef;
   height: 30px;
   border-radius: 999px;
@@ -381,6 +392,12 @@ p {
   transition-property: width, background-color;
 }
 
+@media (max-width: 600px) {
+  .skillbar {
+    width: 80%;
+  }
+}
+
 .skillbar-title {
   position: absolute;
   top: 50%;
@@ -391,9 +408,7 @@ p {
   font-weight: bold;
   font-size: 13px;
   color: #fff;
-
   border-radius: 999px;
-
   z-index: 2;
   display: flex;
   align-items: center;
@@ -419,13 +434,11 @@ p {
   border-radius: 999px;
   -moz-border-radius: 999px;
   -webkit-border-radius: 999px;
-  background: linear-gradient(
-    90deg,
-    #ff637d 0%,
-    #ffb347 35%,
-    #6adcfa 70%,
-    #6840d4 100%
-  );
+  background: linear-gradient(90deg,
+      #ff637d 0%,
+      #ffb347 35%,
+      #6adcfa 70%,
+      #6840d4 100%);
   box-shadow: 0 4px 24px 0 rgba(255, 99, 99, 0.18),
     0 1.5px 8px 0 rgba(106, 220, 250, 0.18);
   border: 2px solid #fff;
@@ -440,7 +453,6 @@ p {
   font-size: 13px;
   font-weight: bold;
   color: #2d2d2d;
-
   padding: 0 14px;
   height: 24px;
   display: flex;
@@ -497,15 +509,16 @@ p {
 }
 
 .fa-paper-plane:hover {
-  /* Toggle our animation play state to running when we are hovering over our sticker */
   animation-play-state: running;
 }
 
 @keyframes shake {
+
   0%,
   100% {
     transform: translateX(0);
   }
+
   10%,
   30%,
   50%,
@@ -513,6 +526,7 @@ p {
   90% {
     transform: translateX(-10px);
   }
+
   20%,
   40%,
   60%,
@@ -520,6 +534,7 @@ p {
     transform: translateX(10px);
   }
 }
+
 .shake {
   animation-name: shake;
 }
@@ -540,6 +555,7 @@ p {
   margin: 0.5em 0 2em 0;
   font-weight: bold;
 }
+
 .form-control:focus {
   border-color: #f67979;
   box-shadow: 0 0 0 0.2rem rgba(255, 99, 99, 0.25);
@@ -648,12 +664,11 @@ label {
   z-index: 1000;
 }
 
-.spinner > div {
+.spinner>div {
   background-color: #ff637d;
   height: 100%;
   width: 6px;
   display: inline-block;
-
   -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
   animation: sk-stretchdelay 1.2s infinite ease-in-out;
 }
@@ -679,23 +694,27 @@ label {
 }
 
 @-webkit-keyframes sk-stretchdelay {
+
   0%,
   40%,
   100% {
     -webkit-transform: scaleY(0.4);
   }
+
   20% {
     -webkit-transform: scaleY(1);
   }
 }
 
 @keyframes sk-stretchdelay {
+
   0%,
   40%,
   100% {
     transform: scaleY(0.4);
     -webkit-transform: scaleY(0.4);
   }
+
   20% {
     transform: scaleY(1);
     -webkit-transform: scaleY(1);
@@ -715,50 +734,60 @@ label {
 }
 
 @keyframes blink {
+
   from,
   to {
     color: transparent;
   }
+
   50% {
     color: white;
   }
 }
 
 @-moz-keyframes blink {
+
   from,
   to {
     color: transparent;
   }
+
   50% {
     color: white;
   }
 }
 
 @-webkit-keyframes blink {
+
   from,
   to {
     color: transparent;
   }
+
   50% {
     color: white;
   }
 }
 
 @-ms-keyframes blink {
+
   from,
   to {
     color: transparent;
   }
+
   50% {
     color: white;
   }
 }
 
 @-o-keyframes blink {
+
   from,
   to {
     color: transparent;
   }
+
   50% {
     color: white;
   }
@@ -786,4 +815,65 @@ label {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
+}
+
+/* FullPage.js optimizations */
+
+#fullpage {
+  overflow: visible;
+  /* Permettre l'affichage de la scrollbar */
+}
+
+/* Classe pour les transitions fluides */
+body.fp-transitioning {
+  pointer-events: none;
+  /* Désactiver les interactions pendant les transitions */
+}
+
+body.fp-transitioning * {
+  pointer-events: none;
+}
+
+/* Réactiver les interactions après transition */
+body:not(.fp-transitioning) {
+  pointer-events: auto;
+}
+
+body:not(.fp-transitioning) * {
+  pointer-events: auto;
+}
+
+/* Amélioration des performances des animations CSS */
+.fp-section {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Amélioration de la navigation avec les points */
+#fp-nav ul li a span {
+  transition: all 0.3s ease !important;
+}
+
+/* Style personnalisé pour la scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff637d;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e55570;
 }

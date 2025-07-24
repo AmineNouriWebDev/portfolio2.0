@@ -1,0 +1,18 @@
+# Ignorer les fichiers système macOS
+.DS_Store
+assets/.DS_Store
+assets/img/.DS_Store
+assets/img/portfolio/.DS_Store
+
+# Autres fichiers système courants
+.AppleDouble
+.LSOverride
+
+# Icones de dossiers
+Icon?
+
+# Fichiers de ressources
+._*
+
+# Thumbs.db (Windows)
+Thumbs.db

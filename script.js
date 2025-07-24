@@ -73,17 +73,34 @@ $(document).ready(function () {
 
   $(document).ready(main);
 
-  // initiate full page scroll
+  // Variables pour gérer le défilement
+  let scrollTimeout;
 
-  $("#fullpage").fullpage({
-    scrollBar: true,
+  // initiate full page scroll
+  $(document).find('#fullpage').fullpage({
+    scrollBar: true, // Garder la scrollbar native
     responsiveWidth: 400,
     navigation: true,
     navigationTooltips: ["home", "about", "portfolio", "contact", "connect"],
     anchors: ["home", "about", "portfolio", "contact", "connect"],
     menu: "#myMenu",
-    fitToSection: false,
+    fitToSection: false, // Revenir à false comme dans l'original
+    scrollingSpeed: 1000, // Vitesse de défilement
+    keyboardScrolling: true, // Activer la navigation au clavier
+    touchSensitivity: 15, // Sensibilité tactile
+    normalScrollElementTouchThreshold: 5, // Seuil tactile
+    
+    // Fonction pour gérer les transitions fluides
+    onLeave: function(index, nextIndex, direction) {
+      // Ajouter une classe pendant la transition
+      $('body').addClass('fp-transitioning');
+      return true;
+    },
+
     afterLoad: function(anchorLink, index){
+      // Retirer la classe de transition
+      $('body').removeClass('fp-transitioning');
+      
       // Synchroniser l'état actif du menu header
       $(".header-links li").removeClass("active");
       if(anchorLink === "about"){
@@ -93,6 +110,7 @@ $(document).ready(function () {
       } else if(anchorLink === "contact"){
         $(".header-links li[data-menuanchor='contact']").addClass("active");
       }
+      
       // Synchroniser l'état actif du menu sidebar
       $(".nav-links li").removeClass("active");
       if(anchorLink === "about"){
@@ -102,9 +120,7 @@ $(document).ready(function () {
       } else if(anchorLink === "contact"){
         $(".nav-links li[data-menuanchor='fourthPage']").addClass("active");
       }
-    },
 
-    afterLoad: function (anchorLink, index) {
       var loadedSection = $(this);
 
       //using index
@@ -141,44 +157,99 @@ $(document).ready(function () {
     }
   });
 
+  // Gestionnaire de défilement amélioré pour la molette
+  var lastScrollTime = 0;
+  var scrollDelay = 800; // Délai entre les défilements
+  
+  var wheelHandler = function(e) {
+    var currentTime = Date.now();
+    
+    // Empêcher les défilements trop rapides
+    if (currentTime - lastScrollTime < scrollDelay) {
+      e.preventDefault();
+      return false;
+    }
+    
+    var delta = e.originalEvent.deltaY || e.originalEvent.detail || e.originalEvent.wheelDelta;
+    
+    // Seuil minimum pour déclencher le défilement
+    if (Math.abs(delta) > 50) {
+      e.preventDefault();
+      lastScrollTime = currentTime;
+      
+      if (delta > 0) {
+        // Défilement vers le bas
+        if (typeof $.fn.fullpage !== 'undefined' && $.fn.fullpage.moveSectionDown) {
+          $.fn.fullpage.moveSectionDown();
+        }
+      } else {
+        // Défilement vers le haut
+        if (typeof $.fn.fullpage !== 'undefined' && $.fn.fullpage.moveSectionUp) {
+          $.fn.fullpage.moveSectionUp();
+        }
+      }
+    }
+  };
+
+  // Attacher les gestionnaires d'événements avec une approche plus compatible
+  $(document).on('wheel', wheelHandler);
+  $(document).on('DOMMouseScroll', wheelHandler);
+
   // move section down one
   $(document).on("click", "#moveDown", function () {
-    $.fn.fullpage.moveSectionDown();
+    if (typeof $.fn.fullpage !== 'undefined' && $.fn.fullpage.moveSectionDown) {
+      $.fn.fullpage.moveSectionDown();
+    }
   });
 
   // fullpage.js link navigation
   $(document).on("click", "#skills", function () {
-    $.fn.fullpage.moveTo(2);
+    if (typeof $.fn.fullpage !== 'undefined' && $.fn.fullpage.moveTo) {
+      $.fn.fullpage.moveTo(2);
+    }
   });
 
   $(document).on("click", "#projects", function () {
-    $.fn.fullpage.moveTo(3);
+    if (typeof $.fn.fullpage !== 'undefined' && $.fn.fullpage.moveTo) {
+      $.fn.fullpage.moveTo(3);
+    }
   });
 
   $(document).on("click", "#contact", function () {
-    $.fn.fullpage.moveTo(4);
+    if (typeof $.fn.fullpage !== 'undefined' && $.fn.fullpage.moveTo) {
+      $.fn.fullpage.moveTo(4);
+    }
   });
 
-  // smooth scrolling
+  // smooth scrolling pour les liens d'ancrage
   $(function () {
-    $("a[href*=#]:not([href=#])").click(function () {
+    $("a[href*=#]:not([href=#])").click(function (e) {
+      e.preventDefault();
       if (
         location.pathname.replace(/^\//, "") ==
           this.pathname.replace(/^\//, "") &&
         location.hostname == this.hostname
       ) {
         var target = $(this.hash);
-        target = target.length
-          ? target
-          : $("[name=" + this.hash.slice(1) + "]");
-        if (target.length) {
-          $("html,body").animate(
-            {
-              scrollTop: target.offset().top
-            },
-            700
-          );
-          return false;
+        var targetAnchor = this.hash.slice(1);
+        
+        // Utiliser fullPage.js pour la navigation
+        if (targetAnchor === "about") {
+          if (typeof $.fn.fullpage !== 'undefined' && $.fn.fullpage.moveTo) {
+            $.fn.fullpage.moveTo(2);
+          }
+        } else if (targetAnchor === "portfolio") {
+          if (typeof $.fn.fullpage !== 'undefined' && $.fn.fullpage.moveTo) {
+            $.fn.fullpage.moveTo(3);
+          }
+        } else if (targetAnchor === "contact") {
+          if (typeof $.fn.fullpage !== 'undefined' && $.fn.fullpage.moveTo) {
+            $.fn.fullpage.moveTo(4);
+          }
+        } else if (targetAnchor === "home" || targetAnchor === "aboutme") {
+          if (typeof $.fn.fullpage !== 'undefined' && $.fn.fullpage.moveTo) {
+            $.fn.fullpage.moveTo(1);
+          }
         }
       }
     });
@@ -217,6 +288,7 @@ $(document).ready(function () {
           // Clear the form.
           $("#name").val("");
           $("#email").val("");
+          $("#phone").val("");
           $("#message").val("");
         })
         .fail(function (data) {
