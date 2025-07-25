@@ -7,7 +7,6 @@ body {
 
 html {
   scroll-behavior: auto;
-  /* Désactiver le smooth scroll natif */
 }
 
 ul {
@@ -21,7 +20,6 @@ a {
 h1 {
   color: #ff637d;
   font-weight: bold;
-  
 }
 
 p {
@@ -72,7 +70,6 @@ p {
   background-color: #000;
   opacity: 1;
   right: -285px;
-  /* start off behind the scenes */
   -webkit-font-smoothing: antialiased;
   width: 285px;
 }
@@ -137,7 +134,6 @@ p {
 .header-links li.active a,
 .header-links li.active a i {
   color: #fff !important;
-  /* Forcer le texte en blanc pour l'état actif */
 }
 
 .header-links a {
@@ -150,7 +146,6 @@ p {
   font-weight: bold;
 }
 
-/* Correction: Ne pas appliquer la couleur rose au texte actif */
 .header-links li:not(.active) a:hover {
   color: #ff637d !important;
   font-weight: bold;
@@ -209,7 +204,6 @@ p {
 .nav-links li.active a,
 .nav-links li.active a i {
   color: #fff !important;
-  /* Forcer le texte en blanc pour l'état actif */
 }
 
 .nav-links li.active a::after {
@@ -365,11 +359,6 @@ p {
   margin-left: auto;
   margin-right: auto;
 }
-  .skillbar {
-    width: 100% !important;
-    min-width: 0;
-    box-sizing: border-box;
-  }
 
 .skillbar {
   width: 70%;
@@ -397,15 +386,6 @@ p {
   -o-transition-property: width, background-color;
   transition-property: width, background-color;
 }
-
-@media (max-width: 600px) {
-  .skillbar {
-    width: 80%;
-  }
-}
-  .skillbar {
-    width: 100% !important;
-  }
 
 .skillbar-title {
   position: absolute;
@@ -481,20 +461,38 @@ p {
   margin-left: auto;
   margin-right: auto;
   max-width: 800px;
+  position: relative;
 }
 
 .content-slide img {
   width: 70%;
 }
 
+/* Flèches de navigation - Desktop */
 .fp-controlArrow.fp-next {
   border-color: transparent transparent transparent #ff637d !important;
   right: 45px !important;
+  border-width: 20px 0 20px 30px !important;
+  width: 0 !important;
+  height: 0 !important;
+  cursor: pointer;
+  position: absolute;
+  top: 50% !important;
+  transform: translateY(-50%);
+  z-index: 10;
 }
 
 .fp-controlArrow.fp-prev {
   border-color: transparent #ff637d transparent transparent !important;
   left: 45px !important;
+  border-width: 20px 30px 20px 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  cursor: pointer;
+  position: absolute;
+  top: 50% !important;
+  transform: translateY(-50%);
+  z-index: 10;
 }
 
 #fp-nav ul li a span,
@@ -634,64 +632,6 @@ label {
   -ms-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
-}
-
-/* smaller resolution styles */
-
-@media (min-width: 100px) and (max-width: 500px) {
-  .aboutParagraph{
-    font-size: 1.1em;
-    line-height: 1.5;
-    padding: 8px 0;
-  }
-  .container-skillbar{
-  
-    width: 100%;
-    padding: 0;
-  }
-  h1 {
-    font-size: 2em;
-    line-height: 1.2;
-    padding: 10px 0;
-    word-break: break-word;
-    
-  }
-  .fa-bars {
-    display: block !important;
-  }
-
-  .header-links {
-    display: none;
-  }
-  /* Adaptation mobile pour le header (section home) */
-  .content {
-    max-width: 300px;
-  }
-
-  .aboutme p {
-    font-size: 1.1em;
-    line-height: 1.5;
-    padding: 8px 0;
-  }
-  .opaque-bg {
-    max-width: 95vw;
-    padding: 8px 8px 12px 12px;
-  }
-  /* Forcer l'affichage de la navigation fullPage.js sur mobile */
-  #fp-nav {
-    display: block !important;
-    position: fixed !important;
-    right: 10px !important;
-    top: 50% !important;
-    z-index: 9999 !important;
-    transform: translateY(-50%);
-    opacity: 1 !important;
-  }
-  #fp-nav ul li,
-  #fp-nav ul li a span {
-    width: 12px !important;
-    height: 12px !important;
-  }
 }
 
 /* loading screen animation */
@@ -864,20 +804,17 @@ label {
 
 #fullpage {
   overflow: visible;
-  /* Permettre l'affichage de la scrollbar */
 }
 
 /* Classe pour les transitions fluides */
 body.fp-transitioning {
   pointer-events: none;
-  /* Désactiver les interactions pendant les transitions */
 }
 
 body.fp-transitioning * {
   pointer-events: none;
 }
 
-/* Réactiver les interactions après transition */
 body:not(.fp-transitioning) {
   pointer-events: auto;
 }
@@ -919,4 +856,227 @@ body:not(.fp-transitioning) * {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #e55570;
+}
+
+/* =================================
+   MEDIA QUERIES - MOBILE OPTIMIZATIONS
+   ================================= */
+
+/* Tablettes */
+@media (min-width: 501px) and (max-width: 768px) {
+  .content-slide img {
+    width: 85%;
+  }
+
+  .fp-controlArrow.fp-next {
+    right: 20px !important;
+  }
+
+  .fp-controlArrow.fp-prev {
+    left: 20px !important;
+  }
+
+  .container-skillbar {
+    width: 90%;
+  }
+
+  .skillbar {
+    width: 90%;
+  }
+}
+
+/* Mobile - Principal */
+@media (min-width: 100px) and (max-width: 500px) {
+
+  /* Navigation mobile */
+  .fa-bars {
+    display: block !important;
+  }
+
+  .header-links {
+    display: none;
+  }
+
+  /* Forcer l'affichage de la navigation fullPage.js sur mobile */
+  #fp-nav {
+    display: block !important;
+    position: fixed !important;
+    right: 10px !important;
+    top: 50% !important;
+    z-index: 9999 !important;
+    transform: translateY(-50%);
+    opacity: 1 !important;
+  }
+
+  #fp-nav ul li,
+  #fp-nav ul li a span {
+    width: 12px !important;
+    height: 12px !important;
+  }
+
+  /* Section About */
+  .aboutParagraph {
+    font-size: 1.1em;
+    line-height: 1.5;
+    padding: 8px 0;
+  }
+
+  .container-skillbar {
+    width: 100%;
+    padding: 0;
+  }
+
+  .skillbar {
+    width: 100% !important;
+  }
+
+  h1 {
+    font-size: 2em;
+    line-height: 1.2;
+    padding: 10px 0;
+    word-break: break-word;
+  }
+
+  /* Section Home */
+  .content {
+    max-width: 300px;
+  }
+
+  .aboutme p {
+    font-size: 1.1em;
+    line-height: 1.5;
+    padding: 8px 0;
+  }
+
+  .opaque-bg {
+    max-width: 95vw;
+    padding: 8px 8px 12px 12px;
+  }
+
+  /* Section Portfolio - SOLUTION PRINCIPALE */
+  .content-slide {
+    position: relative;
+    height: calc(100vh - 120px);
+    /* Hauteur ajustée pour rester dans la section */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+  }
+
+  .content-slide h1 {
+    margin-bottom: 10px;
+  }
+
+  .content-slide p {
+    margin-bottom: 20px;
+  }
+
+  .content-slide img {
+    width: 90%;
+    max-height: 50vh;
+    /* Limiter la hauteur de l'image */
+    object-fit: contain;
+    margin-bottom: 30px;
+  }
+
+  /* Repositionner les flèches sous l'image en mobile */
+  .fp-controlArrow.fp-next {
+    position: absolute !important;
+    top: auto !important;
+    bottom: 80px !important;
+    /* Plus haut pour rester dans la section */
+    right: 35% !important;
+    left: auto !important;
+    transform: translateX(20px) !important;
+    border-width: 15px 0 15px 25px !important;
+    border-color: transparent transparent transparent #ff637d !important;
+    z-index: 100;
+  }
+
+  .fp-controlArrow.fp-prev {
+    position: absolute !important;
+    top: auto !important;
+    bottom: 80px !important;
+    /* Plus haut pour rester dans la section */
+    left: 30% !important;
+    right: auto !important;
+    transform: translateX(-20px) !important;
+    border-width: 15px 25px 15px 0 !important;
+    border-color: transparent #ff637d transparent transparent !important;
+    z-index: 100;
+  }
+
+  /* Ajuster la taille des flèches pour mobile */
+  .fp-controlArrow.fp-next,
+  .fp-controlArrow.fp-prev {
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+  }
+
+  .fp-controlArrow.fp-next:hover,
+  .fp-controlArrow.fp-prev:hover {
+    opacity: 1;
+  }
+
+  /* Contact form mobile */
+  .contact-form {
+    padding: 0 10px;
+  }
+
+  .form-control {
+    font-size: 16px;
+    /* Éviter le zoom sur iOS */
+  }
+
+  #submit {
+    min-width: 150px;
+    padding: 10px;
+  }
+
+  /* Footer mobile */
+  .footer {
+    height: auto;
+    padding: 20px 10px;
+  }
+
+  .social-links a {
+    padding: 0 8px;
+  }
+}
+
+/* Mobile très petit */
+@media (max-width: 320px) {
+  .content-slide {
+    height: calc(100vh - 100px);
+    /* Ajuster pour les très petits écrans */
+    padding: 10px 0;
+  }
+
+  .content-slide img {
+    width: 95%;
+    max-height: 45vh;
+    margin-bottom: 25px;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+
+  .opaque-bg {
+    max-width: 98vw;
+    padding: 5px;
+  }
+
+  .fp-controlArrow.fp-next,
+  .fp-controlArrow.fp-prev {
+    bottom: 60px !important;
+    /* Ajuster pour les petits écrans */
+    border-width: 12px 0 12px 20px !important;
+  }
+
+  .fp-controlArrow.fp-prev {
+    border-width: 12px 20px 12px 0 !important;
+  }
 }
