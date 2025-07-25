@@ -79,7 +79,7 @@ $(document).ready(function () {
   // initiate full page scroll
   $(document).find('#fullpage').fullpage({
     scrollBar: true, // Garder la scrollbar native
-    responsiveWidth: 400,
+    // responsiveWidth: 400, // Suppression de l'option responsiveWidth
     navigation: true,
     navigationTooltips: ["home", "about", "portfolio", "contact", "connect"],
     anchors: ["home", "about", "portfolio", "contact", "connect"],

@@ -21,6 +21,7 @@ a {
 h1 {
   color: #ff637d;
   font-weight: bold;
+  
 }
 
 p {
@@ -364,6 +365,11 @@ p {
   margin-left: auto;
   margin-right: auto;
 }
+  .skillbar {
+    width: 100% !important;
+    min-width: 0;
+    box-sizing: border-box;
+  }
 
 .skillbar {
   width: 70%;
@@ -397,6 +403,9 @@ p {
     width: 80%;
   }
 }
+  .skillbar {
+    width: 100% !important;
+  }
 
 .skillbar-title {
   position: absolute;
@@ -630,6 +639,23 @@ label {
 /* smaller resolution styles */
 
 @media (min-width: 100px) and (max-width: 500px) {
+  .aboutParagraph{
+    font-size: 1.1em;
+    line-height: 1.5;
+    padding: 8px 0;
+  }
+  .container-skillbar{
+  
+    width: 100%;
+    padding: 0;
+  }
+  h1 {
+    font-size: 2em;
+    line-height: 1.2;
+    padding: 10px 0;
+    word-break: break-word;
+    
+  }
   .fa-bars {
     display: block !important;
   }
@@ -637,17 +663,34 @@ label {
   .header-links {
     display: none;
   }
-}
-
-/* mobile styles */
-
-@media (min-width: 100px) and (max-width: 400px) {
+  /* Adaptation mobile pour le header (section home) */
   .content {
     max-width: 300px;
   }
 
-  .aboutme h1 {
-    font-size: 28px;
+  .aboutme p {
+    font-size: 1.1em;
+    line-height: 1.5;
+    padding: 8px 0;
+  }
+  .opaque-bg {
+    max-width: 95vw;
+    padding: 8px 8px 12px 12px;
+  }
+  /* Forcer l'affichage de la navigation fullPage.js sur mobile */
+  #fp-nav {
+    display: block !important;
+    position: fixed !important;
+    right: 10px !important;
+    top: 50% !important;
+    z-index: 9999 !important;
+    transform: translateY(-50%);
+    opacity: 1 !important;
+  }
+  #fp-nav ul li,
+  #fp-nav ul li a span {
+    width: 12px !important;
+    height: 12px !important;
   }
 }
 
