@@ -243,13 +243,10 @@
             </p>
             <br />
             <div class="contact-form">
-              <div id="form-messages"></div>
               <form
                 id="ajax-contact"
-                method="post"
-                role="form"
-                action="contact.php"
-                data-toggle="validator"
+                method="POST"
+                action="https://formspree.io/f/mrbpjdwp"
               >
                 <div
                   class="form-group has-feedback wow fadeInLeft"
@@ -360,23 +357,54 @@
 
         <div class="section fp-auto-height">
           <div class="footer">
-            <p>CONNECT WITH ME</p>
-            <div class="social-links">
-              <span
-                ><a href="#" target="_blank"
-                  ><i class="fa fa-linkedin fa-2x"></i></a
-              ></span>
-              <span
-                ><a target="_blank" href="#" target="_blank"
-                  ><i class="fa fa-twitter fa-2x"></i></a
-              ></span>
-              <span
-                ><a href="https://github.com/AmineNouriWebDev" target="_blank"
-                  ><i class="fa fa-github fa-2x"></i></a
-              ></span>
-              <span
-                ><a href="#"><i class="fa fa-codepen fa-2x"></i></a
-              ></span>
+            <div class="footer-content">
+              <h1 class="footer-title">Let's Create Together</h1>
+              <p class="footer-subtitle">
+                Transforming ideas into digital experiences
+              </p>
+
+              <div class="tech-stack">
+                <span class="tech-item">WordPress</span>
+                <span class="tech-item">React</span>
+                <span class="tech-item">Next.js</span>
+                <span class="tech-item">JavaScript</span>
+                <span class="tech-item">HTML5/CSS3</span>
+                <span class="tech-item">PHP</span>
+              </div>
+
+              <div class="footer-quote">
+                "Code is like humor. When you have to explain it, it's bad."<br />
+                <strong>- Cory House</strong>
+              </div>
+
+              <div class="social-section">
+                <h3>Connect With Me</h3>
+                <div class="social-links">
+                  <a href="#" target="_blank" title="LinkedIn">
+                    <i class="fa fa-linkedin"></i>
+                  </a>
+                  <a href="#" target="_blank" title="Twitter">
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                  <a
+                    href="https://github.com/AmineNouriWebDev"
+                    target="_blank"
+                    title="GitHub"
+                  >
+                    <i class="fa fa-github"></i>
+                  </a>
+                  <a href="#" title="CodePen">
+                    <i class="fa fa-codepen"></i>
+                  </a>
+                  <a href="mailto:your.email@example.com" title="Email">
+                    <i class="fa fa-envelope"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="footer-bottom">
+              © 2025 Med Amine Nouri • Crafted with ❤️ and lots of ☕
             </div>
           </div>
         </div>
@@ -390,5 +418,43 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.4/jquery.fullPage.min.js"></script>
     <script src="./script.js"></script>
+    <!-- Toastify JS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("ajax-contact");
+        if (form) {
+          form.addEventListener("submit", function (e) {
+            setTimeout(function () {
+              Toastify({
+                text: "Message envoyé avec succès ! Merci pour votre contact.",
+                duration: 4000,
+                gravity: "top",
+                position: "center",
+                backgroundColor: "#43d477",
+                stopOnFocus: true,
+                close: true,
+                callback: function () {
+                  // Réinitialiser le formulaire après le toast
+                  form.reset();
+                },
+              }).showToast();
+              // Si le callback n'est pas supporté, fallback après le toast
+              setTimeout(function () {
+                form.reset();
+              }, 4100);
+            }, 1000);
+          });
+        }
+      });
+    </script>
   </body>
 </html>
