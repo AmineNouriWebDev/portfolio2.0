@@ -457,6 +457,11 @@ p {
   max-width: 800px;
 }
 
+/* Empêcher la couleur violette sur les liens visités dans la section projets */
+.section[data-anchor="projects"] a:visited {
+  color: #ff637d !important;
+}
+
 .content-slide {
   margin-left: auto;
   margin-right: auto;
