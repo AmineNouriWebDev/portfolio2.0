@@ -1,15 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nouri Mohamed Amine</title>
-    <meta name="description" content="Web designer and front-end developer" />
+
+    <!-- SEO Meta Tags -->
+    <title>
+      Nouri Mohamed Amine - Développeur Web & Designer UI/UX | Tunis, Tunisie
+    </title>
+    <meta
+      name="description"
+      content="Développeur web professionnel spécialisé en React, Next.js, WordPress. Création de sites web modernes et responsives en Tunisie. Portfolio et services de développement front-end."
+    />
+    <meta
+      name="keywords"
+      content="développeur web tunisie, création site web, react developer, nextjs, wordpress developer, ui ux designer, développeur front-end tunis"
+    />
+    <meta name="author" content="Nouri Mohamed Amine" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="French" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nourimedamine.dev/" />
+    <meta
+      property="og:title"
+      content="Nouri Mohamed Amine - Développeur Web & Designer UI/UX"
+    />
+    <meta
+      property="og:description"
+      content="Développeur web professionnel spécialisé en React, Next.js, WordPress. Création de sites web modernes et responsives en Tunisie."
+    />
+    <meta property="og:image" content="./assets/img/og-image.jpg" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Nouri Mohamed Amine Portfolio" />
+
+    <!-- Twitter Card -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://nourimedamine.dev/" />
+    <meta
+      property="twitter:title"
+      content="Nouri Mohamed Amine - Développeur Web & Designer UI/UX"
+    />
+    <meta
+      property="twitter:description"
+      content="Développeur web professionnel spécialisé en React, Next.js, WordPress. Création de sites web modernes et responsives en Tunisie."
+    />
+    <meta property="twitter:image" content="./assets/img/og-image.jpg" />
+
+    <!-- Favicon optimisé -->
     <link rel="icon" type="image/x-icon" href="./assets/img/logo.ico" />
     <link
-      href="https://fonts.googleapis.com/css?family=Raleway:100,200,400,600"
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/img/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/img/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/img/favicon-16x16.png"
+    />
+
+    <!-- Preconnect pour optimiser le chargement des fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+
+    <!-- CSS externe avec performance optimisée -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;400;600;700&display=swap"
       rel="stylesheet"
-      type="text/css"
     />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.4/jquery.fullPage.min.css"
@@ -29,433 +96,606 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
     />
     <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
-    <!-- partial:index.partial.html -->
-    <body>
-      <!-- navbar header -->
 
-      <div class="nav-header">
-        <div class="nav-brand">
-          <img src="./assets/img/logo.png" />
-        </div>
-        <i class="fa fa-bars fa-3x"></i>
-        <div class="header-links">
-          <ul>
-            <li data-menuanchor="about">
-              <a href="#about"><i class="fa fa-user"></i> ABOUT</a>
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Nouri Mohamed Amine",
+        "jobTitle": "Développeur Web & Designer UI/UX",
+        "description": "Développeur web professionnel spécialisé en React, Next.js, WordPress",
+        "url": "https://nourimedamine.dev",
+        "email": "nouri.webdev@gmail.com",
+        "telephone": "+216-26-067-067",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Tunis",
+          "addressCountry": "TN"
+        },
+        "sameAs": [
+          "https://github.com/AmineNouriWebDev",
+          "https://linkedin.com/in/nourimedamine",
+          "https://twitter.com/nourimedamine"
+        ],
+        "knowsAbout": [
+          "Développement Web",
+          "React",
+          "Next.js",
+          "WordPress",
+          "JavaScript",
+          "HTML5",
+          "CSS3",
+          "UI/UX Design"
+        ],
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Freelance Web Developer"
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <!-- Navigation header -->
+    <nav class="nav-header" aria-label="Navigation principale">
+      <div class="nav-brand">
+        <img src="./assets/img/logo.png" alt="Nouri Mohamed Amine - Logo" />
+      </div>
+      <button
+        class="fa fa-bars fa-3x"
+        aria-label="Ouvrir le menu mobile"
+        type="button"
+      ></button>
+      <div class="header-links">
+        <ul>
+          <li data-menuanchor="about">
+            <a href="#about" aria-label="À propos de moi"
+              ><i class="fa fa-user" aria-hidden="true"></i> ABOUT</a
+            >
+          </li>
+          <li data-menuanchor="portfolio">
+            <a href="#portfolio" aria-label="Mon portfolio"
+              ><i class="fa fa-briefcase" aria-hidden="true"></i> PORTFOLIO</a
+            >
+          </li>
+          <li data-menuanchor="contact">
+            <a href="#contact" aria-label="Me contacter"
+              ><i class="fa fa-envelope" aria-hidden="true"></i> CONTACT</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Sidebar slider -->
+    <div class="nav-screen" aria-label="Menu mobile">
+      <button
+        class="fa fa-times fa-3x"
+        aria-label="Fermer le menu mobile"
+        type="button"
+      ></button>
+      <div class="nav-container">
+        <div class="nav-links">
+          <ul id="myMenu">
+            <li data-menuanchor="secondPage"><a href="#about">ABOUT</a></li>
+            <li data-menuanchor="thirdPage">
+              <a href="#portfolio">PORTFOLIO</a>
             </li>
-            <li data-menuanchor="portfolio">
-              <a href="#portfolio"><i class="fa fa-briefcase"></i> PORTFOLIO</a>
-            </li>
-            <li data-menuanchor="contact">
-              <a href="#contact"><i class="fa fa-envelope"></i> CONTACT</a>
-            </li>
+            <li data-menuanchor="fourthPage"><a href="#contact">CONTACT</a></li>
           </ul>
         </div>
       </div>
-      <!-- end navbar header -->
+    </div>
 
-      <!-- sidebar slider -->
-      <div class="nav-screen">
-        <i class="fa fa-times fa-3x"></i>
-        <div class="nav-container">
-          <div class="nav-links">
-            <ul id="myMenu">
-              <li data-menuanchor="secondPage"><a href="#about">ABOUT</a></li>
-              <li data-menuanchor="thirdPage">
-                <a href="#portfolio">PORTFOLIO</a>
-              </li>
-              <li data-menuanchor="fourthPage">
-                <a href="#contact">CONTACT</a>
-              </li>
-            </ul>
-          </div>
+    <!-- Main content -->
+    <main id="fullpage">
+      <!-- Hero section -->
+      <section class="section aboutme" data-anchor="aboutme">
+        <div class="opaque-bg animated fadeInDown">
+          <h1 style="background-color: #000; color: #008000">
+            Nouri<span style="color: #ff637d">&lt;/&gt;</span>Med Amine
+          </h1>
+          <p>
+            <span
+              id="holder"
+              style="
+                font-weight: bolder;
+                background-color: #000;
+                color: #008000;
+              "
+              title="Texte animé décrivant mon métier"
+            ></span
+            ><span class="blinking-cursor" aria-hidden="true">|</span>
+          </p>
         </div>
-      </div>
-      <!-- end navbar slider -->
+        <button
+          id="moveDown"
+          class="fa fa-chevron-down fa-3x bounce"
+          aria-label="Faire défiler vers le bas"
+          type="button"
+        ></button>
+      </section>
 
-      <!-- begin fullpage -->
+      <!-- About section -->
+      <section class="section" data-anchor="skills">
+        <div class="content">
+          <h2 class="wow fadeInDown" data-wow-delay="0.2s">À PROPOS DE MOI</h2>
+          <p
+            class="wow fadeInLeft aboutParagraph"
+            style="text-align: justify; padding: 0 20px"
+            data-wow-delay="0.2s"
+          >
+            Salut, je suis Med Amine Nouri — un développeur web passionné et
+            créatif dédié à donner vie à vos idées. Je crée des sites web
+            élégants et performants qui valorisent votre marque et engagent
+            votre audience. Construisons quelque chose d'extraordinaire ensemble
+            ! 🚀😎
+          </p>
 
-      <div id="fullpage">
-        <!-- begin section -->
-
-        <div class="section aboutme" data-anchor="aboutme">
-          <div class="opaque-bg animated fadeInDown">
-            <h1 style="background-color: #000; color: #008000">
-              Nouri<span style="color: #ff637d">&lt;/&gt;</span>Med Amine
-            </h1>
-            <p>
-              <span
-                id="holder"
-                style="
-                  font-weight: bolder;
-                  background-color: #000;
-                  color: #008000;
-                "
-              ></span
-              ><span class="blinking-cursor">|</span>
-            </p>
-          </div>
-          <i id="moveDown" class="fa fa-chevron-down fa-3x bounce"></i>
-        </div>
-        <!-- end section -->
-
-        <!-- begin section -->
-
-        <div class="section" data-anchor="skills">
-          <div class="content">
-            <h1 class="wow fadeInDown" data-wow-delay="0.2s">ABOUT ME</h1>
-            <p
-              class="wow fadeInLeft aboutParagraph"
-              style="text-align: justify; padding: 0 20px"
-              data-wow-delay="0.2s"
+          <div class="wow fadeInUp container-skillbar" data-wow-delay="0.2s">
+            <div
+              class="skillbar clearfix"
+              data-percent="90%"
+              role="progressbar"
+              aria-valuenow="90"
+              aria-valuemin="0"
+              aria-valuemax="100"
             >
-              Hi, I'm Med Amine Nouri — a passionate and creative web developer
-              dedicated to bringing your ideas to life. I craft elegant,
-              high-performing websites that elevate your brand and engage your
-              audience. Let's build something extraordinary together! 🚀😎
-            </p>
-
-            <div class="wow fadeInUp container-skillbar" data-wow-delay="0.2s">
-              <div class="skillbar clearfix" data-percent="90%">
-                <div class="skillbar-title">
-                  <span>HTML5</span>
-                </div>
-                <div class="skillbar-bar"></div>
-                <div class="skill-bar-percent">90%</div>
+              <div class="skillbar-title">
+                <span>HTML5</span>
               </div>
-              <!-- End Skill Bar -->
+              <div class="skillbar-bar"></div>
+              <div class="skill-bar-percent">90%</div>
+            </div>
 
-              <div class="skillbar clearfix" data-percent="90%">
-                <div class="skillbar-title">
-                  <span>CSS3</span>
-                </div>
-                <div class="skillbar-bar"></div>
-                <div class="skill-bar-percent">90%</div>
+            <div
+              class="skillbar clearfix"
+              data-percent="90%"
+              role="progressbar"
+              aria-valuenow="90"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              <div class="skillbar-title">
+                <span>CSS3</span>
               </div>
-              <!-- End Skill Bar -->
+              <div class="skillbar-bar"></div>
+              <div class="skill-bar-percent">90%</div>
+            </div>
 
-              <div class="skillbar clearfix" data-percent="80%">
-                <div class="skillbar-title">
-                  <span>Wordpress developer</span>
-                </div>
-                <div class="skillbar-bar"></div>
-                <div class="skill-bar-percent">80%</div>
+            <div
+              class="skillbar clearfix"
+              data-percent="80%"
+              role="progressbar"
+              aria-valuenow="80"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              <div class="skillbar-title">
+                <span>WordPress Developer</span>
               </div>
-              <!-- End Skill Bar -->
+              <div class="skillbar-bar"></div>
+              <div class="skill-bar-percent">80%</div>
+            </div>
 
-              <div class="skillbar clearfix" data-percent="75%">
-                <div class="skillbar-title">
-                  <span>React & NextJs </span>
-                </div>
-                <div class="skillbar-bar"></div>
-                <div class="skill-bar-percent">75%</div>
+            <div
+              class="skillbar clearfix"
+              data-percent="75%"
+              role="progressbar"
+              aria-valuenow="75"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              <div class="skillbar-title">
+                <span>React & Next.js</span>
               </div>
-              <!-- End Skill Bar -->
+              <div class="skillbar-bar"></div>
+              <div class="skill-bar-percent">75%</div>
+            </div>
 
-              <div class="skillbar clearfix" data-percent="90%">
-                <div class="skillbar-title">
-                  <span>Vibe Coding</span>
-                </div>
-                <div class="skillbar-bar"></div>
-                <div class="skill-bar-percent">90%</div>
+            <div
+              class="skillbar clearfix"
+              data-percent="90%"
+              role="progressbar"
+              aria-valuenow="90"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              <div class="skillbar-title">
+                <span>Vibe Coding</span>
               </div>
-              <!-- End Skill Bar -->
+              <div class="skillbar-bar"></div>
+              <div class="skill-bar-percent">90%</div>
+            </div>
 
-              <div class="skillbar clearfix" data-percent="80%">
-                <div class="skillbar-title">
-                  <span>Photoshop & other</span>
-                </div>
-                <div class="skillbar-bar"></div>
-                <div class="skill-bar-percent">80%</div>
+            <div
+              class="skillbar clearfix"
+              data-percent="80%"
+              role="progressbar"
+              aria-valuenow="80"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              <div class="skillbar-title">
+                <span>Photoshop & Autres</span>
               </div>
-              <!-- End Skill Bar -->
+              <div class="skillbar-bar"></div>
+              <div class="skill-bar-percent">80%</div>
             </div>
           </div>
         </div>
-        <!-- end section -->
+      </section>
 
-        <!-- begin section -->
-
-        <div class="section" data-anchor="projects">
-          <div class="content-slide">
-            <div class="slide">
-              <h1 class="wow fadeInDown" data-wow-delay="0.2s">
-                <a
-                  style="color: #ff637d"
-                  href="https://www.workman-stid.com/"
-                  target="_blank"
-                >
-                  WORKMAN</a
-                >
-              </h1>
-              <p class="wow fadeInDown" data-wow-delay="0.2s">
-                Vêtements professionnels & équipements de sécurité
-              </p>
-              <img
-                class="wow fadeInUp"
-                data-wow-delay="0.2s"
-                data-src="./assets/img/portfolio/workman.png"
-              />
-            </div>
-            <div class="slide">
-              <h1>
-                <a
-                  href="https://www.maparatunisie.tn/"
-                  target="_blank"
-                  style="color: #ff637d"
-                >
-                  MAPARA</a
-                >
-              </h1>
-              <p>Parapharmacie en ligne</p>
-              <img data-src="./assets/img/portfolio/mapara.png" />
-            </div>
-            <div class="slide">
-              <h1>
-                <a
-                  href="https://zitouna-gourmet.free.nf/?i=2"
-                  target="_blank"
-                  style="color: #ff637d"
-                >
-                  ZITOUNA GOURMET</a
-                >
-              </h1>
-              <p>Restaurant traditionnel tunisien, livraison à domicile</p>
-              <img data-src="./assets/img/portfolio/zitouna_gourmet.png" />
-            </div>
-            <div class="slide">
-              <h1>
-                <a
-                  href="https://adenium.tn/"
-                  target="_blank"
-                  style="color: #ff637d"
-                  >ADENIUM</a
-                >
-              </h1>
-              <p>Société de services et ingénierie informatique</p>
-              <img data-src="./assets/img/portfolio/adenium.png" />
-            </div>
-            <div class="slide">
-              <h1>
-                <a
-                  href="https://kilowatt-international.com/fr/home/"
-                  target="_blank"
-                  style="color: #ff637d"
-                  >KILOWATT</a
-                >
-              </h1>
-              <p>Fabricant de cordons & faisceaux électriques</p>
-              <img data-src="./assets/img/portfolio/kilowatt.png" />
-            </div>
-            <div class="slide">
-              <h1>PERSONAL WEBSITE</h1>
-              <p>Responsive vertical/horizontal header website theme.</p>
-              <img
-                data-src="https://s3-us-west-2.amazonaws.com/bradengelhardt/assets/personalsite.jpg"
-              />
-            </div>
-          </div>
-        </div>
-        <!-- end section -->
-
-        <!-- begin section -->
-
-        <div class="section" data-anchor="contact">
-          <div class="content wow fadeInDown" data-wow-delay="0.2s">
-            <h1>CONTACT ME</h1>
-            <p>
-              Whether you're interested in working with me or just want to say
-              hello, I'd love to hear from you!
-            </p>
-            <br />
-            <div class="contact-form">
-              <form
-                id="ajax-contact"
-                method="POST"
-                action="https://formspree.io/f/mrbpjdwp"
+      <!-- Portfolio section -->
+      <div class="section" data-anchor="projects">
+        <h2 class="visually-hidden">Mes Projets Portfolio</h2>
+        <div class="content-slide">
+          <article class="slide">
+            <h3 class="wow fadeInDown" data-wow-delay="0.2s">
+              <a
+                style="color: #ff637d"
+                href="https://www.workman-stid.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visiter le site Workman"
               >
-                <div
-                  class="form-group has-feedback wow fadeInLeft"
-                  data-wow-delay="0.6s"
-                >
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="name"
-                    name="name"
-                    placeholder="NAME"
-                    data-error="Field can't be blank!"
-                    required
-                  />
-                  <span
-                    class="glyphicon form-control-feedback"
-                    aria-hidden="true"
-                  ></span>
-                  <div class="help-block with-errors"></div>
-                </div>
+                WORKMAN
+              </a>
+            </h3>
+            <p class="wow fadeInDown" data-wow-delay="0.2s">
+              Vêtements professionnels & équipements de sécurité
+            </p>
+            <img
+              class="wow fadeInUp"
+              data-wow-delay="0.2s"
+              src="./assets/img/portfolio/workman.png"
+              alt="Capture d'écran du site Workman - Vêtements professionnels"
+              loading="lazy"
+            />
+          </article>
 
-                <div
-                  class="form-group has-feedback wow fadeInRight"
-                  data-wow-delay="0.8s"
-                >
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="email"
-                    name="email"
-                    placeholder="EMAIL"
-                    data-error="Field can't be blank!"
-                    required
-                  />
-                  <span
-                    class="glyphicon form-control-feedback"
-                    aria-hidden="true"
-                  ></span>
-                  <div class="help-block with-errors"></div>
-                </div>
-                <div
-                  class="form-group has-feedback wow fadeInLeft"
-                  data-wow-delay="0.8s"
-                >
-                  <input
-                    type="number"
-                    class="form-control"
-                    id="phone"
-                    name="phone"
-                    placeholder="PHONE"
-                    data-error="Field can't be blank!"
-                    required
-                  />
-                  <span
-                    class="glyphicon form-control-feedback"
-                    aria-hidden="true"
-                  ></span>
-                  <div class="help-block with-errors"></div>
-                </div>
+          <article class="slide">
+            <h3>
+              <a
+                href="https://www.maparatunisie.tn/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style="color: #ff637d"
+                aria-label="Visiter le site Mapara"
+              >
+                MAPARA
+              </a>
+            </h3>
+            <p>Parapharmacie en ligne</p>
+            <img
+              src="./assets/img/portfolio/mapara.png"
+              alt="Capture d'écran du site Mapara - Parapharmacie en ligne"
+              loading="lazy"
+            />
+          </article>
 
-                <div
-                  class="form-group has-feedback wow fadeInRight"
-                  data-wow-delay="1s"
-                >
-                  <textarea
-                    data-minlength="10"
-                    class="form-control"
-                    id="message"
-                    name="message"
-                    placeholder="MESSAGE"
-                    data-error="Minimum of 10 characters"
-                    required
-                  ></textarea>
-                  <span
-                    class="glyphicon form-control-feedback"
-                    aria-hidden="true"
-                  ></span>
-                  <div class="help-block with-errors"></div>
-                </div>
+          <article class="slide">
+            <h3>
+              <a
+                href="https://zitouna-gourmet.free.nf/?i=2"
+                target="_blank"
+                rel="noopener noreferrer"
+                style="color: #ff637d"
+                aria-label="Visiter le site Zitouna Gourmet"
+              >
+                ZITOUNA GOURMET
+              </a>
+            </h3>
+            <p>Restaurant traditionnel tunisien, livraison à domicile</p>
+            <img
+              src="./assets/img/portfolio/zitouna_gourmet.png"
+              alt="Capture d'écran du site Zitouna Gourmet - Restaurant tunisien"
+              loading="lazy"
+            />
+          </article>
 
-                <div class="hidden">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="human"
-                    name="human"
-                    placeholder=""
-                  />
-                </div>
-                <div class="wow fadeInUp" data-wow-delay="1s">
-                  <button
-                    type="submit"
-                    id="submit"
-                    name="submit"
-                    class="btn btn-lg"
-                  >
-                    SEND MESSAGE
-                  </button>
-                </div>
-              </form>
-              <br />
-            </div>
-          </div>
+          <article class="slide">
+            <h3>
+              <a
+                href="https://adenium.tn/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style="color: #ff637d"
+                aria-label="Visiter le site Adenium"
+              >
+                ADENIUM
+              </a>
+            </h3>
+            <p>Société de services et ingénierie informatique</p>
+            <img
+              src="./assets/img/portfolio/adenium.png"
+              alt="Capture d'écran du site Adenium - Services informatiques"
+              loading="lazy"
+            />
+          </article>
+
+          <article class="slide">
+            <h3>
+              <a
+                href="https://kilowatt-international.com/fr/home/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style="color: #ff637d"
+                aria-label="Visiter le site Kilowatt"
+              >
+                KILOWATT
+              </a>
+            </h3>
+            <p>Fabricant de cordons & faisceaux électriques</p>
+            <img
+              src="./assets/img/portfolio/kilowatt.png"
+              alt="Capture d'écran du site Kilowatt - Fabricant électrique"
+              loading="lazy"
+            />
+          </article>
+
+          <article class="slide">
+            <h3>SITE PERSONNEL</h3>
+            <p>Thème de site web responsive vertical/horizontal.</p>
+            <img
+              src="https://s3-us-west-2.amazonaws.com/bradengelhardt/assets/personalsite.jpg"
+              alt="Capture d'écran du site personnel - Thème responsive"
+              loading="lazy"
+            />
+          </article>
         </div>
-        <!-- end section -->
-
-        <!-- begin section -->
-
-        <div class="section fp-auto-height">
-          <div class="footer">
-            <div class="footer-content">
-              <h1 class="footer-title">Let's Create Together</h1>
-              <p class="footer-subtitle">
-                Transforming ideas into digital experiences
-              </p>
-
-              <div class="tech-stack">
-                <span class="tech-item">WordPress</span>
-                <span class="tech-item">React</span>
-                <span class="tech-item">Next.js</span>
-                <span class="tech-item">JavaScript</span>
-                <span class="tech-item">HTML5/CSS3</span>
-                <span class="tech-item">PHP</span>
-              </div>
-
-              <div class="footer-quote">
-                "Code is like humor. When you have to explain it, it's bad."<br />
-                <strong>- Cory House</strong>
-              </div>
-
-              <div class="social-section">
-                <h3>Connect With Me</h3>
-                <div class="social-links">
-                  <a href="#" target="_blank" title="LinkedIn">
-                    <i class="fa fa-linkedin"></i>
-                  </a>
-                  <a href="#" target="_blank" title="Twitter">
-                    <i class="fa fa-twitter"></i>
-                  </a>
-                  <a
-                    href="https://github.com/AmineNouriWebDev"
-                    target="_blank"
-                    title="GitHub"
-                  >
-                    <i class="fa fa-github"></i>
-                  </a>
-                  <a href="#" title="CodePen">
-                    <i class="fa fa-codepen"></i>
-                  </a>
-                  <a href="mailto:your.email@example.com" title="Email">
-                    <i class="fa fa-envelope"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div class="footer-bottom">
-              © 2025 Med Amine Nouri • Crafted with ❤️ and lots of ☕
-            </div>
-          </div>
-        </div>
-        <!-- end section -->
       </div>
-      <!-- end fullpage -->
-    </body>
-    <!-- partial -->
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.4/jquery.fullPage.min.js"></script>
-    <script src="./script.js"></script>
+
+      <!-- Contact section -->
+      <section class="section" data-anchor="contact">
+        <div class="content wow fadeInDown" data-wow-delay="0.2s">
+          <h2>CONTACTEZ-MOI</h2>
+          <p>
+            Que vous souhaitiez travailler avec moi ou simplement dire bonjour,
+            j'aimerais avoir de vos nouvelles !
+          </p>
+          <br />
+          <div class="contact-form">
+            <form
+              id="ajax-contact"
+              method="POST"
+              action="https://formspree.io/f/mrbpjdwp"
+              novalidate
+            >
+              <div
+                class="form-group has-feedback wow fadeInLeft"
+                data-wow-delay="0.6s"
+              >
+                <label for="name" class="sr-only">Nom</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  name="name"
+                  placeholder="NOM"
+                  data-error="Ce champ ne peut pas être vide !"
+                  required
+                  aria-describedby="name-error"
+                />
+                <span
+                  class="glyphicon form-control-feedback"
+                  aria-hidden="true"
+                ></span>
+                <div class="help-block with-errors" id="name-error"></div>
+              </div>
+
+              <div
+                class="form-group has-feedback wow fadeInRight"
+                data-wow-delay="0.8s"
+              >
+                <label for="email" class="sr-only">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  placeholder="EMAIL"
+                  data-error="Ce champ ne peut pas être vide !"
+                  required
+                  aria-describedby="email-error"
+                />
+                <span
+                  class="glyphicon form-control-feedback"
+                  aria-hidden="true"
+                ></span>
+                <div class="help-block with-errors" id="email-error"></div>
+              </div>
+
+              <div
+                class="form-group has-feedback wow fadeInLeft"
+                data-wow-delay="0.8s"
+              >
+                <label for="phone" class="sr-only">Téléphone</label>
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="phone"
+                  name="phone"
+                  placeholder="TÉLÉPHONE"
+                  data-error="Ce champ ne peut pas être vide !"
+                  required
+                  aria-describedby="phone-error"
+                />
+                <span
+                  class="glyphicon form-control-feedback"
+                  aria-hidden="true"
+                ></span>
+                <div class="help-block with-errors" id="phone-error"></div>
+              </div>
+
+              <div
+                class="form-group has-feedback wow fadeInRight"
+                data-wow-delay="1s"
+              >
+                <label for="message" class="sr-only">Message</label>
+                <textarea
+                  data-minlength="10"
+                  class="form-control"
+                  id="message"
+                  name="message"
+                  placeholder="MESSAGE"
+                  data-error="Minimum 10 caractères"
+                  required
+                  aria-describedby="message-error"
+                ></textarea>
+                <span
+                  class="glyphicon form-control-feedback"
+                  aria-hidden="true"
+                ></span>
+                <div class="help-block with-errors" id="message-error"></div>
+              </div>
+
+              <!-- Honeypot field for spam protection -->
+              <div class="hidden">
+                <label for="human" class="sr-only">Ne pas remplir</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="human"
+                  name="human"
+                  placeholder=""
+                  tabindex="-1"
+                  autocomplete="off"
+                />
+              </div>
+
+              <div class="wow fadeInUp" data-wow-delay="1s">
+                <button
+                  type="submit"
+                  id="submit"
+                  name="submit"
+                  class="btn btn-lg"
+                  aria-label="Envoyer le message"
+                >
+                  ENVOYER MESSAGE
+                </button>
+              </div>
+            </form>
+            <div id="form-messages" role="alert" aria-live="polite"></div>
+            <br />
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer section -->
+      <section class="section fp-auto-height">
+        <footer class="footer">
+          <div class="footer-content">
+            <h2 class="footer-title">Créons Ensemble</h2>
+            <p class="footer-subtitle">
+              Transformer les idées en expériences digitales
+            </p>
+
+            <div class="tech-stack">
+              <span class="tech-item">WordPress</span>
+              <span class="tech-item">React</span>
+              <span class="tech-item">Next.js</span>
+              <span class="tech-item">JavaScript</span>
+              <span class="tech-item">HTML5/CSS3</span>
+              <span class="tech-item">PHP</span>
+            </div>
+
+            <blockquote class="footer-quote">
+              "Le code c'est comme l'humour. Quand il faut l'expliquer, c'est
+              qu'il est mauvais."<br />
+              <strong>- Cory House</strong>
+            </blockquote>
+
+            <div class="social-section">
+              <h3>Connectez-vous avec moi</h3>
+              <div class="social-links">
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="LinkedIn"
+                  aria-label="Mon profil LinkedIn"
+                >
+                  <i class="fa fa-linkedin" aria-hidden="true"></i>
+                </a>
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Twitter"
+                  aria-label="Mon profil Twitter"
+                >
+                  <i class="fa fa-twitter" aria-hidden="true"></i>
+                </a>
+                <a
+                  href="https://github.com/AmineNouriWebDev"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="GitHub"
+                  aria-label="Mon profil GitHub"
+                >
+                  <i class="fa fa-github" aria-hidden="true"></i>
+                </a>
+                <a href="#" title="CodePen" aria-label="Mon profil CodePen">
+                  <i class="fa fa-codepen" aria-hidden="true"></i>
+                </a>
+                <a
+                  href="mailto:nouri.webdev@gmail.com"
+                  title="Email"
+                  aria-label="M'envoyer un email"
+                >
+                  <i class="fa fa-envelope" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-bottom">
+            © 2025 Med Amine Nouri • Créé avec ❤️ et beaucoup de ☕
+          </div>
+        </footer>
+      </section>
+    </main>
+
+    <!-- WhatsApp Floating Button -->
+    <div class="whatsapp-float">
+      <a
+        href="https://wa.me/21626067067"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="whatsapp-button"
+        aria-label="Contactez-moi sur WhatsApp"
+      >
+        <i class="fa fa-whatsapp" aria-hidden="true"></i>
+        <span class="whatsapp-tooltip">Contactez-moi sur WhatsApp</span>
+      </a>
+    </div>
+
+    <!-- JavaScript optimisé -->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js" defer></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.4/jquery.fullPage.min.js"
+      defer
+    ></script>
+    <script src="./script.js" defer></script>
+
     <!-- Toastify JS -->
     <link
       rel="stylesheet"
       type="text/css"
       href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
     />
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/toastify-js"
-    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js" defer></script>
+
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const form = document.getElementById("ajax-contact");
@@ -471,11 +711,9 @@
                 stopOnFocus: true,
                 close: true,
                 callback: function () {
-                  // Réinitialiser le formulaire après le toast
                   form.reset();
                 },
               }).showToast();
-              // Si le callback n'est pas supporté, fallback après le toast
               setTimeout(function () {
                 form.reset();
               }, 4100);
@@ -484,5 +722,19 @@
         }
       });
     </script>
+
+    <style>
+      .visually-hidden {
+        position: absolute !important;
+        width: 1px !important;
+        height: 1px !important;
+        padding: 0 !important;
+        margin: -1px !important;
+        overflow: hidden !important;
+        clip: rect(0, 0, 0, 0) !important;
+        white-space: nowrap !important;
+        border: 0 !important;
+      }
+    </style>
   </body>
 </html>
