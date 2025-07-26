@@ -1115,6 +1115,10 @@ body:not(.fp-transitioning) * {
 }
 
 /* Mobile - Principal */
+  /* Cacher la navigation principale sur mobile */
+  .nav-header {
+    display: none !important;
+  }
 @media (min-width: 100px) and (max-width: 500px) {
 
   /* Navigation mobile */
