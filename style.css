@@ -1112,19 +1112,23 @@ body:not(.fp-transitioning) * {
   .skillbar {
     width: 90%;
   }
+        .nav-header {
+          display: none !important;
+        }
 }
 
 /* Mobile - Principal */
   /* Cacher la navigation principale sur mobile */
-  .nav-header {
-    display: none !important;
-  }
+
 /* =================================
    CORRECTION NAVIGATION MOBILE - POINTS FULLPAGE.JS
    ================================= */
 
 /* Mobile - Principal */
 @media (min-width: 100px) and (max-width: 500px) {
+    .nav-header {
+        display: none !important;
+      }
 
   /* Navigation mobile */
   .fa-bars {
@@ -1424,6 +1428,9 @@ body:not(.fp-transitioning) * {
 
 /* Mobile très petit */
 @media (max-width: 320px) {
+    .nav-header {
+        display: none !important;
+      }
   .content-slide {
     height: calc(100vh - 100px);
     padding: 10px 0;
@@ -1478,6 +1485,9 @@ body:not(.fp-transitioning) * {
 
 /* Mobile très petit */
 @media (max-width: 320px) {
+    .nav-header {
+        display: none !important;
+      }
   .content-slide {
     height: calc(100vh - 100px);
     /* Ajuster pour les très petits écrans */
